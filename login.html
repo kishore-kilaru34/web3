@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Online Book Store</title>
+    </head>
+    <body style="background-color:#e0ffff ; "  ></body>
+<script>
+    function validate()
+    {
+        var user= form.usname.value;
+        var user1= user.length;
+        if(user==0){
+            alert("please enter username")
+            return false;
+        }
+        var pswd= form.password.value;
+        var psd=pswd.length;
+        if(psd<8){
+            alert("please ente minimum 8 characters");
+            return false;
+        }
+    }
+</script>
+<body>
+<center>
+    <legend>LOGIN</legend>
+   <form name="form" action="" onsubmit="return validate()">
+<table>
+    <tbody>
+        <tr><td>Username:</td><td><input type="text" name="username"></td></tr>
+        <tr><td>Password:</td><td><input type="text" name="password"></td></tr>
+        <tr><td><input type="Submit" name="submit"></td></tr>
+    </tbody>
+</table>
+</form> 
+</center>
+</body>    
+</html>

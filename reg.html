@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+ <head>
+     <div id="header">
+     <h1>New User Registratation</h1>    
+     </div>
+     <div id="content">
+         <meta http-equiv="content.type" content="text/html";
+           charset="UTF-8">
+         <title>Register</title>
+
+     
+ </head>
+ <body style="background-color:#00ffff ; "  ></body>
+ <script>
+     function validate ()
+     {
+         var fn = frm.fname.value;
+         for(x in fn)
+          {
+              ch= fn.charCodeAt(x);
+              if(ch<65||ch>90 && ch<97||ch>122)
+              {
+                  alert("Invalid lastname");
+                  return false;
+              }
+          }
+         var phn=frm.phone.value;
+         var lenp=phn.length;
+         if (lenp!==10)
+         {
+             alert("Phone no should be exactly 10 digits");
+             return false;
+         }
+         var pwd1=frm.pwd.value;
+         var pwd1=pwd1.length;
+         if(pwd1%2==1)
+         {
+             alert("Password Should conatin even number of characters");
+             return false;
+         }  
+         if(pwd1>8)
+         {
+             alert("Password Should not exceed 8 digits");
+             return false;
+         }
+         var reg = /^\w+([-+.']\w+)*@\w+9[-.]\w+)*\.\w+ ([-.]\w+)*$/;
+         var mail=frm.mailid.value;
+         if(reg.test(mail)){
+             alert("valid mail");}
+          else{
+              alert("invalid mail");
+              return false;
+          }   
+              return true;
+          
+     }    
+    </script> 
+    <div id="container">
+    <body>
+    <center>
+        <form name="frm" method="POST" action="success.html"onsubmit="return validate()">
+        <legend>Registratation</legend>
+        <fieldset align ="center">
+         <table align="center">
+             <tr><td>Firstname:</td><td><input type="text" name="fname" value ="" required size = "50"/></td></tr>
+             <tr><td>Lastname:</td><td><input type="text" name="lname" value ="" required size = "50"/></td></tr>
+             <tr><td>Phone No:</td><td><input type="text" name="phone" value ="" required size = "50"/></td></tr>
+             <tr><td>Mail Id:</td><td><input type="text" name="mail id" value ="" required size = "50"/></td></tr>
+             <tr><td>Gender:</td>
+            <td> Male: <input type="radio" name="gender" value="male">
+                Female: <input type="radio" name="Gender" value="female"></td></tr>
+                 <tr><td>DOB:</td><td><input type="date" name="dob" value ="dd/mm/yyyy" required size = "50"/></td></tr>
+                 <tr><td>Username:</td><td><input type="text" name="uname" value ="" required size = "50"/></td></tr> 
+                 <tr><td>Password:</td><td><input type="text" name="pwd" value ="" required size = "50"/></td></tr>
+                 <tr><td>Age:</td><td><input type="text" name="age" value ="" required size = "50"/></td></tr>           
+         </table>
+        <button> <input type="submit" value="SUBMIT"  name="submit"/> </button>
+        </fieldset>
+        </form>
+    </center>   
+    </body>   
+    </div>  
+</html>
